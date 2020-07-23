@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="add1" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="buyMore" type="text" class="form-control text-center" value="1">
+                           <button id="add" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5 >$ <span id="money" > 1219</span> </h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="minbutton" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="mobilecase" type="text" class="form-control text-center" value="1">
+                           <button id="button" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$  <span id="casemoney" > 59</span> </h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5  >$   <span id="subtotal"  >1278</span>  </h5>
+                        <h5>$0</h5>
+                        <h5>$ <span id="total"  >1278</span> </h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button onclick="alert('Thank you for being with us')" type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+
+   <script type="text/javascript">
+
+
+
+
+   var caseButton  = document.getElementById('button');
+caseButton.addEventListener('click',function(){
+
+  var mobile = document.getElementById('mobilecase').value;
+var mobileCaseNumber = parseFloat(mobile);
+var mobileCaseNumber = mobileCaseNumber + 1;
+document.getElementById('mobilecase').value = mobileCaseNumber;
+
+var caseMoney = document.getElementById('casemoney').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber + 59;
+document.getElementById('casemoney').innerText = caseMoneyNumber;
+
+
+
+
+
+
+var caseMoney = document.getElementById('subtotal').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber + 59;
+document.getElementById('subtotal').innerText = caseMoneyNumber;
+
+
+
+
+
+var caseMoney = document.getElementById('total').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber + 59;
+document.getElementById('total').innerText = caseMoneyNumber;
+
+
+
+})
+
+
+
+var caseButton  = document.getElementById('minbutton');
+caseButton.addEventListener('click',function(){
+
+  var mobile = document.getElementById('mobilecase').value;
+var mobileCaseNumber = parseFloat(mobile);
+var mobileCaseNumber = mobileCaseNumber -1 ;
+document.getElementById('mobilecase').value = mobileCaseNumber;
+
+var caseMoney = document.getElementById('casemoney').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber - 59;
+document.getElementById('casemoney').innerText = caseMoneyNumber;
+
+
+
+
+
+var caseMoney = document.getElementById('subtotal').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber - 59;
+document.getElementById('subtotal').innerText = caseMoneyNumber;
+
+
+
+
+
+
+var caseMoney = document.getElementById('total').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber - 59;
+document.getElementById('total').innerText = caseMoneyNumber;
+
+
+
+
+
+
+
+})
+
+
+
+
+var priceButton  = document.getElementById('add');
+priceButton.addEventListener('click',function(){
+
+  var phone = document.getElementById('buyMore').value;
+var phoneCaseNumber = parseFloat(phone);
+var phoneCaseNumber = phoneCaseNumber + 1;
+document.getElementById('buyMore').value = phoneCaseNumber;
+
+var phoneMoney = document.getElementById('money').innerText;
+var phoneMoneyNumber = parseFloat(phoneMoney);
+var phoneMoneyNumber = phoneMoneyNumber + 1219;
+document.getElementById('money').innerText = phoneMoneyNumber;
+
+
+
+
+
+var caseMoney = document.getElementById('subtotal').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber + 1219;
+document.getElementById('subtotal').innerText = caseMoneyNumber;
+
+
+
+
+
+
+
+
+
+var caseMoney = document.getElementById('total').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber + 1219;
+document.getElementById('total').innerText = caseMoneyNumber;
+
+
+
+
+
+})
+
+
+
+
+
+var priceButton  = document.getElementById('add1');
+priceButton.addEventListener('click',function(){
+
+  var phone = document.getElementById('buyMore').value;
+var phoneCaseNumber = parseFloat(phone);
+var phoneCaseNumber = phoneCaseNumber - 1;
+document.getElementById('buyMore').value = phoneCaseNumber;
+
+var phoneMoney = document.getElementById('money').innerText;
+var phoneMoneyNumber = parseFloat(phoneMoney);
+var phoneMoneyNumber = phoneMoneyNumber - 1219;
+document.getElementById('money').innerText = phoneMoneyNumber;
+
+
+
+
+
+var caseMoney = document.getElementById('subtotal').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber - 1219;
+document.getElementById('subtotal').innerText = caseMoneyNumber;
+
+
+
+
+
+
+
+
+
+var caseMoney = document.getElementById('total').innerText;
+var caseMoneyNumber = parseFloat(caseMoney);
+var caseMoneyNumber = caseMoneyNumber - 1219;
+document.getElementById('total').innerText = caseMoneyNumber;
+
+
+
+
+
+
+
+
+
+})
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
