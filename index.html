@@ -3,7 +3,7 @@
 
 <head>
 
-   <h1>WELCOME TO ONLINE SHOPPING</h1>
+   
    <title>Shopping Cart</title>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,16 +13,16 @@
 </head>
 
 <body>
-
+<h1 class="welcome">WELCOME TO ONLINE SHOPPING</h1>
    <section>
       <div class="container">
          <div class="cart">
             <div class="col-md-12 col-lg-10 mx-auto">
-               <div class="cart-item">
+               <div id="cartItem" class="cart-item">
                   <div class="row">
                      <div class="col-md-7 center-item">
                         <img src="images/product-1.png" alt="">
-                        <h5>iPhone 11 128GB Black</h5>
+                        <h5 id="touch3">iPhone 11 128GB Black</h5>
                      </div>
 
                      <div class="col-md-5 center-item">
@@ -32,7 +32,7 @@
                            <button id="add" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5 >$ <span id="money" > 1219</span> </h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
+                        <img id="touch" src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
                </div>
@@ -51,7 +51,7 @@
 
                         </div>
                         <h5>$  <span id="casemoney" > 59</span> </h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
+                        <img id="touch2" src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
                </div>
@@ -67,7 +67,7 @@
 
                      <div class="col-md-4 status">
                         <h5  >$   <span id="subtotal"  >1278</span>  </h5>
-                        <h5>$0</h5>
+                        <h5>$  <span id="tax">0</span></h5>
                         <h5>$ <span id="total"  >1278</span> </h5>
                      </div>
                   </div>
@@ -85,7 +85,20 @@
    <script type="text/javascript">
 
 
+var touch = document.getElementById('touch');
+touch.addEventListener('click',function(event){
+  event.target.parentNode.remove(event.target) ;
 
+})
+
+
+
+
+var touch = document.getElementById('touch2');
+touch.addEventListener('click',function(event){
+  event.target.parentNode.remove(touch) ;
+
+})
 
    var caseButton  = document.getElementById('button');
 caseButton.addEventListener('click',function(){
@@ -113,11 +126,22 @@ document.getElementById('subtotal').innerText = caseMoneyNumber;
 
 
 
+var taxMoney = document.getElementById('tax').innerText;
+var taxMoneyNumber = parseFloat(taxMoney);
+var taxMoneyNumber = taxMoneyNumber + 2;
+document.getElementById('tax').innerText = taxMoneyNumber;
+
+
+
+
+
 
 var caseMoney = document.getElementById('total').innerText;
 var caseMoneyNumber = parseFloat(caseMoney);
 var caseMoneyNumber = caseMoneyNumber + 59;
-document.getElementById('total').innerText = caseMoneyNumber;
+document.getElementById('total').innerText = caseMoneyNumber + taxMoneyNumber;
+
+
 
 
 
@@ -151,11 +175,21 @@ document.getElementById('subtotal').innerText = caseMoneyNumber;
 
 
 
+var taxMoney = document.getElementById('tax').innerText;
+var taxMoneyNumber = parseFloat(taxMoney);
+var taxMoneyNumber = taxMoneyNumber - 1;
+document.getElementById('tax').innerText = taxMoneyNumber;
+
+
+
+
+
+
 
 var caseMoney = document.getElementById('total').innerText;
 var caseMoneyNumber = parseFloat(caseMoney);
 var caseMoneyNumber = caseMoneyNumber - 59;
-document.getElementById('total').innerText = caseMoneyNumber;
+document.getElementById('total').innerText = caseMoneyNumber - taxMoneyNumber;
 
 
 
@@ -192,7 +226,10 @@ document.getElementById('subtotal').innerText = caseMoneyNumber;
 
 
 
-
+var taxMoney = document.getElementById('tax').innerText;
+var taxMoneyNumber = parseFloat(taxMoney);
+var taxMoneyNumber = taxMoneyNumber + 20;
+document.getElementById('tax').innerText = taxMoneyNumber;
 
 
 
@@ -201,8 +238,7 @@ document.getElementById('subtotal').innerText = caseMoneyNumber;
 var caseMoney = document.getElementById('total').innerText;
 var caseMoneyNumber = parseFloat(caseMoney);
 var caseMoneyNumber = caseMoneyNumber + 1219;
-document.getElementById('total').innerText = caseMoneyNumber;
-
+document.getElementById('total').innerText = caseMoneyNumber + taxMoneyNumber;
 
 
 
@@ -241,14 +277,20 @@ document.getElementById('subtotal').innerText = caseMoneyNumber;
 
 
 
+var taxMoney = document.getElementById('tax').innerText;
+var taxMoneyNumber = parseFloat(taxMoney);
+var taxMoneyNumber = taxMoneyNumber - 20;
+document.getElementById('tax').innerText = taxMoneyNumber;
+
+
+
+
 
 
 var caseMoney = document.getElementById('total').innerText;
 var caseMoneyNumber = parseFloat(caseMoney);
 var caseMoneyNumber = caseMoneyNumber - 1219;
-document.getElementById('total').innerText = caseMoneyNumber;
-
-
+document.getElementById('total').innerText = caseMoneyNumber - taxMoneyNumber;
 
 
 
